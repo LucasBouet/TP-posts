@@ -1,10 +1,10 @@
 <?php 
-function limitOutput($text, $maxLength) {
-    if (strlen($text) <= $maxLength) {
-        return $text;
-    }
-    return substr($text, 0, $maxLength) . '...';
-}
+// function limitOutput($text, $maxLength) {
+//     if (strlen($text) <= $maxLength) {
+//         return $text;
+//     }
+//     return substr($text, 0, $maxLength) . '...';
+// }
 
 ?>
 <!DOCTYPE html>
