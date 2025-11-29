@@ -4,6 +4,7 @@
         <h2 class="text-2xl font-bold text-blue-700 mb-6">Publier un post</h2>
 
         <form method="POST" action="#" enctype="multipart/form-data" class="flex flex-col gap-6">
+            <input type="hidden" name="csrf" value="<?= $csrfToken ?>">
 
             <div class="flex flex-col gap-2">
                 <label for="image" class="text-sm font-medium text-slate-700">Image</label>

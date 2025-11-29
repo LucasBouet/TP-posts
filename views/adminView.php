@@ -70,6 +70,7 @@ $posts = [
 <main class="max-w-6xl mx-auto mt-16 p-6 flex flex-col gap-12">
 
     <form method="POST" class="bg-white/80 backdrop-blur-lg p-6 rounded-2xl shadow-lg border border-blue-100">
+        <input type="hidden" name="csrf" value="<?= $csrfToken ?>">
         <h2 class="text-xl font-bold text-blue-700 mb-4">Posts en attente de validation</h2>
 
         <div class="overflow-x-auto rounded-xl">
