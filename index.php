@@ -1,10 +1,12 @@
 <?php
 
-$path = match($_SERVER["REQUEST_URI"]) {
+$uri = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
+
+$path = match($uri) {
     '/' => 'controllers/homeController.php',
     '/publier' => 'controllers/publierController.php',
     '/admin' => 'controllers/adminController.php',
-    default => '404.php',
+    default => 'views/404.php',
 };
 
 require $path;

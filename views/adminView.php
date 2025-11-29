@@ -69,7 +69,7 @@ $posts = [
 ?>
 <main class="max-w-6xl mx-auto mt-16 p-6 flex flex-col gap-12">
 
-    <form method="GET" class="bg-white/80 backdrop-blur-lg p-6 rounded-2xl shadow-lg border border-blue-100">
+    <form method="POST" class="bg-white/80 backdrop-blur-lg p-6 rounded-2xl shadow-lg border border-blue-100">
         <h2 class="text-xl font-bold text-blue-700 mb-4">Posts en attente de validation</h2>
 
         <div class="overflow-x-auto rounded-xl">
@@ -119,7 +119,7 @@ $posts = [
         </div>
     </form>
 
-    <form method="GET" class="bg-white/80 backdrop-blur-lg p-6 rounded-2xl shadow-lg border border-blue-100">
+    <form method="POST" class="bg-white/80 backdrop-blur-lg p-6 rounded-2xl shadow-lg border border-blue-100">
         <h2 class="text-xl font-bold text-blue-700 mb-4">Tous les posts</h2>
 
         <div class="overflow-x-auto rounded-xl">
@@ -141,6 +141,7 @@ $posts = [
                             <td class="p-3"><?= limitOutput(htmlspecialchars($post['content']), 200) ?></td>
                             <td class="p-3">
                                 <button
+                                    type="submit"
                                     class="cursor-pointer px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
                                     formaction="/admin?delete=<?= urlencode($post['id']) ?>">
                                     Supprimer
