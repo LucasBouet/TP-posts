@@ -27,10 +27,6 @@ function limitOutput($text, $maxLength) {
                 <tbody class="divide-y divide-blue-100">
                     <?php foreach ($posts as $post): ?>
                         <?php 
-                        // Note: J'ai retiré le form englobant ici, 
-                        // et j'ai supposé que le $csrfToken est disponible si nécessaire.
-                        // Cependant, l'utilisation de la méthode GET était peu sécurisée pour le CSRF.
-
                         // Afficher uniquement les posts non publiés
                         if (!$post['is_published']): 
                         ?>
