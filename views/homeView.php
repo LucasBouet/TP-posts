@@ -1,63 +1,63 @@
 <?php
 
-$posts = [
-    [
-        'id' => 1,
-        'title' => 'Premier Post',
-        'picture' => 'post1.jpg',
-        'content' => 'Ceci est le contenu du premier post.',
-        'created_at' => '2024-01-15 10:00:00',
-        'is_published' => true,
-    ],
-    [
-        'id' => 2,
-        'title' => 'Deuxième Post',
-        'picture' => 'post2.jpg',
-        'content' => 'Ceci est le contenu du deuxième post.',
-        'created_at' => '2024-02-20 14:30:00',
-        'is_published' => true,
-    ],
-    [
-        'id' => 3,
-        'title' => 'Troisième Post',
-        'picture' => 'post3.jpg',
-        'content' => 'Ceci est le contenu du troisième post.',
-        'created_at' => '2024-03-05 09:15:00',
-        'is_published' => true,
-    ],
-    [
-        'id' => 4,
-        'title' => 'Quatrieme Post',
-        'picture' => 'post3.jpg',
-        'content' => 'Ceci est le contenu du quatrieme post.',
-        'created_at' => '2024-02-20 14:30:00',
-        'is_published' => true,
-    ],
-    [
-        'id' => 5,
-        'title' => 'Cinquieme Post',
-        'picture' => 'post1.jpg',
-        'content' => 'Ceci est le contenu du cinquieme post.',
-        'created_at' => '2024-03-05 09:15:00',
-        'is_published' => true,
-    ],
-    [
-        'id' => 6,
-        'title' => 'Sixieme Post',
-        'picture' => 'post2.jpg',
-        'content' => 'Ceci est le contenu du sixieme post.',
-        'created_at' => '2024-02-20 14:30:00',
-        'is_published' => true,
-    ],
-    [
-        'id' => 7,
-        'title' => 'Septieme Post',
-        'picture' => 'post2.jpg',
-        'content' => 'Ceci est le contenu du Septieme post.',
-        'created_at' => '2024-03-05 09:15:00',
-        'is_published' => true,
-    ],
-];
+// $posts = [
+//     [
+//         'id' => 1,
+//         'title' => 'Premier Post',
+//         'picture' => 'post1.jpg',
+//         'content' => 'Ceci est le contenu du premier post.',
+//         'created_at' => '2024-01-15 10:00:00',
+//         'is_published' => true,
+//     ],
+//     [
+//         'id' => 2,
+//         'title' => 'Deuxième Post',
+//         'picture' => 'post2.jpg',
+//         'content' => 'Ceci est le contenu du deuxième post.',
+//         'created_at' => '2024-02-20 14:30:00',
+//         'is_published' => true,
+//     ],
+//     [
+//         'id' => 3,
+//         'title' => 'Troisième Post',
+//         'picture' => 'post3.jpg',
+//         'content' => 'Ceci est le contenu du troisième post.',
+//         'created_at' => '2024-03-05 09:15:00',
+//         'is_published' => true,
+//     ],
+//     [
+//         'id' => 4,
+//         'title' => 'Quatrieme Post',
+//         'picture' => 'post3.jpg',
+//         'content' => 'Ceci est le contenu du quatrieme post.',
+//         'created_at' => '2024-02-20 14:30:00',
+//         'is_published' => true,
+//     ],
+//     [
+//         'id' => 5,
+//         'title' => 'Cinquieme Post',
+//         'picture' => 'post1.jpg',
+//         'content' => 'Ceci est le contenu du cinquieme post.',
+//         'created_at' => '2024-03-05 09:15:00',
+//         'is_published' => true,
+//     ],
+//     [
+//         'id' => 6,
+//         'title' => 'Sixieme Post',
+//         'picture' => 'post2.jpg',
+//         'content' => 'Ceci est le contenu du sixieme post.',
+//         'created_at' => '2024-02-20 14:30:00',
+//         'is_published' => true,
+//     ],
+//     [
+//         'id' => 7,
+//         'title' => 'Septieme Post',
+//         'picture' => 'post2.jpg',
+//         'content' => 'Ceci est le contenu du Septieme post.',
+//         'created_at' => '2024-03-05 09:15:00',
+//         'is_published' => true,
+//     ],
+// ];
 
 ?>
 
