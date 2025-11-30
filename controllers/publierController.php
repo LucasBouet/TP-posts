@@ -35,14 +35,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $datetime = date("Y-m-d H:i");
 
             $stmt = $pdo->prepare("INSERT INTO publication (title, picture, description, datetime, is_published)
-                VALUES (:title, :picture, :description, :datetime, :its_published)");
+                VALUES (:title, :picture, :description, :datetime, :is_published)");
 
             $stmt->execute([
                 ":title" => $title,
                 ":picture" => $imageName,
                 ":description" => $description ?: null,
                 ":datetime" => $datetime,
-                ":is_published" => 1
+                ":is_published" => 0
             ]);
             echo "Publication ajoutée avec succès.";
         } else {

@@ -4,8 +4,8 @@ require "models/databaseModel.php";
 // recup les tables de la bdd
 function keepTable()
 {
-    $db = connectDatabase();
-    $tables = getTables($db);
+    $db = getDatabaseConnection();
+    $tables = getAllByTable('publication');
     return $tables;
 
 }
@@ -20,14 +20,39 @@ function deleteline($db, $table, $id)
     return $stmt->execute();
 }
 
-function suppr()
+function getImagePathById($db, $id)
 {
-    if (isset($_POST['supprimer'])) {
-        $db = connectDatabase();
-        $table = $_POST['table'];
-        $id = $_POST['id'];
-        deleteline($db, $table, $id);
+    $sql = "SELECT picture FROM publication WHERE id = :id";
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    var_dump($row);
+    return $row['picture'] ?? null;
+}
+
+function suppr($id)
+{
+    $db = getDatabaseConnection();
+    $table = 'publication';
+    
+    // Récupère le chemin de l'image
+    $imagePath = getImagePathById($db, $id);
+    var_dump($imagePath); // Debug
+    
+    // Supprime l'image du dossier
+    if ($imagePath) {
+        $fullPath = __DIR__ . '/../assets/images/' . $imagePath;
+        var_dump($fullPath); // Debug
+        var_dump(file_exists($fullPath)); // Debug
+        
+        if (file_exists($fullPath)) {
+            unlink($fullPath);
+            echo "Image supprimée : " . $fullPath;
+        }
     }
+    
+    deleteline($db, $table, $id);
 }
 
 // function faire publier
@@ -66,6 +91,26 @@ function getPublicationPreview($db, $idVar)
 
     return $row;
 }
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // la protection CSRF devrait être ici mais manque de temps / organisation, il aurait fallu un fichier different pour le valider
+    $action = $_POST['action'] ?? null;
+    $postId = $_POST['id'] ?? null;
+    if ($action && $postId && is_numeric($postId)) {
+        $db = getDatabaseConnection();
+        if ($action === 'delete') {
+            suppr($postId);
+            header('Location: /admin');
+            exit;
+        } elseif ($action === 'accept') {   
+            setProductPublished($db, $postId);  
+            header('Location: /admin');
+            exit;
+        }
+    }
+}
+
+$posts = keepTable();
 
 require "views/header.php";
 require "views/adminView.php";
