@@ -3,12 +3,9 @@ function limitOutput($text, $maxLength) {
     if (strlen($text) <= $maxLength) {
         return $text;
     }
-    // Note: Utiliser '...' pour indiquer que le contenu a été coupé.
     return substr($text, 0, $maxLength) . '...';
 }
 
-// Les données $posts doivent être fournies par votre contrôleur (elles sont commentées ici pour l'exemple)
-// $posts = [ ... ]; 
 ?>
 <main class="max-w-6xl mx-auto mt-16 p-6 flex flex-col gap-12">
 
@@ -82,8 +79,6 @@ function limitOutput($text, $maxLength) {
             </table>
         </div>
     </div>
-
-    ---
 
     <div class="bg-white/80 backdrop-blur-lg p-6 rounded-2xl shadow-lg border border-blue-100">
         <h2 class="text-xl font-bold text-blue-700 mb-4">Tous les posts</h2>
