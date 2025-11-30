@@ -4,7 +4,7 @@ require "models/databaseModel.php";
 
 // Fonction pour récupérer tous les posts publiés
 function getPosts() {
-    $posts = getPublishedPublications();
+    $posts = getAllByTable('publication');
     
     // Corriger les noms des colonnes
     foreach ($posts as &$post) {
